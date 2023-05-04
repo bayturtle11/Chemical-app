@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-namespace ConsoleApp1
+namespace ChemicalApp1
 {
     class Program
     {
@@ -12,11 +12,19 @@ namespace ConsoleApp1
 
         static void onechamical()
         {
-
-
+            
             //display screen
-            Console.WriteLine("Welcome to the Chemical app. \n" +
-                "Were we do the testing for you\n");
+            Console.WriteLine(
+                @"                                                                                                                               " + "\n" +
+                @"            ('-. .-.   ('-.  _   .-')      ('-.                         ('-.                       ('-.      _ (`-.    _ (`-.  " + "\n" +
+                @"           ( OO )  / _(  OO)( '.( OO )_   ( OO ).-.                    ( OO ).-.                  ( OO ).-. ( (OO  )  ( (OO  ) " + "\n" +
+                @"   .-----. ,--. ,--.(,------.,--.   ,--.) / . --. /  ,-.-')   .-----.  / . --. / ,--.             / . --. /_.`     \ _.`     \ " + "\n" +
+                @"  '  .--./ |  | |  | |  .---'|   `.'   |  | \-.  \   |  |OO) '  .--./  | \-.  \  |  |.-')         | \-.  \(__...--''(__...--'' " + "\n" +
+                @"  |  |('-. |   .|  | |  |    |         |.-'-'  |  |  |  |  \ |  |('-..-'-'  |  | |  | OO )      .-'-'  |  ||  /  | | |  /  | | " + "\n" +
+                @" /_) |OO  )|       |(|  '--. |  |'.'|  | \| |_.'  |  |  |(_//_) |OO  )\| |_.'  | |  |`-' |       \| |_.'  ||  |_.' | |  |_.' | " + "\n" +
+                @" ||  |`-'| |  .-.  | |  .--' |  |   |  |  |  .-.  | ,|  |_.'||  |`-'|  |  .-.  |(|  '---.'        |  .-.  ||  .___.' |  .___.' " + "\n" +
+                @"(_'  '--'\ |  | |  | |  `---.|  |   |  |  |  | |  |(_|  |  (_'  '--'\  |  | |  | |      |         |  | |  ||  |      |  |      " + "\n" +
+                @"   `-----' `--' `--' `------'`--'   `--'  `--' `--'  `--'     `-----'  `--' `--' `------'         `--' `--'`--'      `--'      " + "\n" );
 
             Console.WriteLine("Plase type in the chemical you are testing");
             string userinput = Console.ReadLine();
@@ -24,6 +32,7 @@ namespace ConsoleApp1
             float sumEfficeny = 0;
 
             Console.WriteLine("please wait");
+            
 
             for (int i = 0; i < 5; i++)
             {
@@ -31,7 +40,7 @@ namespace ConsoleApp1
                 Random randomnumber = new Random();
                 int germsNumber = randomnumber.Next(5000, 10000);
 
-                Thread.Sleep(500); 
+                Thread.Sleep(500);
                 Console.WriteLine("");
                 Console.WriteLine($" number of germs {germsNumber}\n");
 
@@ -61,7 +70,7 @@ namespace ConsoleApp1
                 lowChemical = lastEfficeny;
                 smallChemical = userinput;
             }
-           
+
 
 
         }
@@ -74,17 +83,34 @@ namespace ConsoleApp1
                 //call OneChemicals()
                 onechamical();
 
-                Console.WriteLine("\nplase enter 'STOP' to qiut or press enter to contue");
-                flagmain = Console.ReadLine();
+                bool flagCheck = true;
+                while (flagCheck)
+                {
+                    Console.WriteLine("plase enter 'STOP' to qiut or press 'ENTER' to contue\n");
+                    flagmain = Console.ReadLine().ToUpper();
 
 
-                //loop until user types 'stop'
+
+                    if (flagmain == "STOP" || flagmain == "")
+                    {
+                        flagCheck = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR: plase enter 'STOP' ");
+                    }
+
+                   
+
+
+                    //loop until user types 'stop'
+                }
+                //display the Most and Least efficiency chemicals
+                Console.WriteLine($"the chemical {bigCemical} is the most efficent chemical for clening with a rating of {highChemical} out 10000\n" +
+                    $"the chemical {smallChemical} is leat efficent chemical for cleaning with a rating of {lowChemical} out of 10000 ");
+
+
             }
-            //display the Most and Least efficiency chemicals
-            Console.WriteLine($"the chemical {bigCemical} is the most efficent chemical for clening with a rating of {highChemical} out 10000\n" +
-                $"the chemical {smallChemical} is leat efficent chemical for cleaning with a rating of {lowChemical} out of 10000 ");
-
-
         }
     }
 }

@@ -3,6 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>CemicalApp</AssemblyName>
+    <RootNamespace>ChemiaclApp</RootNamespace>
   </PropertyGroup>
 
 </Project>
