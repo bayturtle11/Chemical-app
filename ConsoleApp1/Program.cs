@@ -1,4 +1,4 @@
-﻿using System;
+﻿   using System;
 using System.Threading;
 namespace ChemicalApp1
 {
@@ -12,8 +12,10 @@ namespace ChemicalApp1
 
         static void onechamical()
         {
-            
+
             //display screen
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+
             Console.WriteLine(
                 @"                                                                                                                               " + "\n" +
                 @"            ('-. .-.   ('-.  _   .-')      ('-.                         ('-.                       ('-.      _ (`-.    _ (`-.  " + "\n" +
@@ -25,6 +27,7 @@ namespace ChemicalApp1
                 @" ||  |`-'| |  .-.  | |  .--' |  |   |  |  |  .-.  | ,|  |_.'||  |`-'|  |  .-.  |(|  '---.'        |  .-.  ||  .___.' |  .___.' " + "\n" +
                 @"(_'  '--'\ |  | |  | |  `---.|  |   |  |  |  | |  |(_|  |  (_'  '--'\  |  | |  | |      |         |  | |  ||  |      |  |      " + "\n" +
                 @"   `-----' `--' `--' `------'`--'   `--'  `--' `--'  `--'     `-----'  `--' `--' `------'         `--' `--'`--'      `--'      " + "\n" );
+            Console.ForegroundColor = ConsoleColor.White;
 
             Console.WriteLine("Plase type in the chemical you are testing");
             string userinput = Console.ReadLine();
@@ -86,18 +89,21 @@ namespace ChemicalApp1
                 bool flagCheck = true;
                 while (flagCheck)
                 {
-                    Console.WriteLine("plase enter 'STOP' to qiut or press 'ENTER' to contue\n");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("\nplase enter 'STOP' to qiut or press 'ENTER' to contue\n");
                     flagmain = Console.ReadLine().ToUpper();
 
 
 
-                    if (flagmain == "STOP" || flagmain == "")
+                    if (flagmain == "STOP" || flagmain == "")   
                     {
                         flagCheck = false;
                     }
                     else
                     {
-                        Console.WriteLine("ERROR: plase enter 'STOP' ");
+                        Console.ForegroundColor = ConsoleColor.Red;
+
+                        Console.WriteLine("!-!-!-!-!-!-!-!-!-ERROR: plase enter 'STOP' to end code or enter-!-!-!-!-!-!-!-!-!");
                     }
 
                    
